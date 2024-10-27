@@ -166,7 +166,9 @@ border: 1px solid red;
     align-items: flex-start;
     flex-direction: column;
 }
-
+.none{
+    display: none;
+}
 @media (max-width:450px){
     .profile__name{
         font-size:15px;
