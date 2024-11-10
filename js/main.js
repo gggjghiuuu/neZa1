@@ -6,10 +6,16 @@ const BalanceButton = document.querySelector(".choose__balance")
 const HistoryButton = document.querySelector(".choose__history-of-findings")
 
 BalanceButton.addEventListener("click", function(){
-    functionActiveOrDisable(BalanceTemplate, HistoryTemplate);
+    functionActiveOrDisableTemplate(BalanceTemplate, HistoryTemplate);
+    //disableButton(BalanceButton, HistoryButton)
+    // BalanceButton.disabled = "true";
+    // HistoryButton.enabled = "true";
 })
 HistoryButton.addEventListener("click", function(){
-    functionActiveOrDisable(HistoryTemplate, BalanceTemplate);
+    functionActiveOrDisableTemplate(HistoryTemplate, BalanceTemplate);
+    disableButton(HistoryButton, BalanceButton);
+    // HistoryButton.disabled = "true";
+    //BalanceButton.enabled = "true";
 })
 
 // function func1(item) {
@@ -19,16 +25,23 @@ HistoryButton.addEventListener("click", function(){
 //         item.style.display="flex";
 //     } 
 // };
-function functionActiveOrDisable(activeItem, disableItem, buttonActive, buttonDisable){
+function functionActiveOrDisableTemplate(activeItem, disableItem){
     if (activeItem.style.display !== 'none'){
         activeItem.style.display="none";
         disableItem.style.display = "flex";
-        buttonActive.style.display = "none";
-        buttonDisable.style.display = "flex"
     }else{
         activeItem.style.display="flex";
         disableItem.style.display="none";
-        buttonActive.style.display = "flex";
-        buttonDisable.style.display = "none"
     } 
 }
+// function disableButton(buttonPressed, buttonUnPressed){
+//     if(buttonPressed.disabled !== "false"){
+//         buttonPressed.disabled = "false";
+//         buttonUnPressed.disabled = "true";
+//     }
+//     else
+//     {
+//         buttonPressed.disabled = "true";
+//         buttonUnPressed.disabled = "false";
+//     }
+// }
